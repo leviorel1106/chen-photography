@@ -17,3 +17,16 @@
 }
 .demo-camera.play .film-frame img{animation-duration:2.2s;animation-delay:1.6s}
 .demo-camera.play .film-frame:nth-child(even) img{animation-delay:1.8s}
+
+/* Keep photographs hidden until the camera is ready; no flash of finished photos. */
+.demo-camera:not(.play) .film-window{visibility:hidden}
+.demo-camera:not(.camera-ready) .camera{visibility:hidden}
+.demo-camera .signature-copy{opacity:1;transform:none}
+.demo-camera.play .signature-copy{animation:none}
+.demo-camera.play .camera{animation-delay:0s}
+.demo-camera.play .lens-glint{animation-delay:.1s}
+.demo-camera.play .exposure{animation-delay:.15s}
+.demo-camera.play .film-left,.demo-camera.play .film-right,
+.demo-camera.play .film-left .film-track,.demo-camera.play .film-right .film-track{animation-delay:.3s;animation-duration:1.2s}
+.demo-camera.play .film-frame img{animation-delay:.4s;animation-duration:1.2s}
+.demo-camera.play .film-frame:nth-child(even) img{animation-delay:.5s}
