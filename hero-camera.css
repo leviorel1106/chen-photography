@@ -15,3 +15,5 @@
 .demo-camera .film-frame img{height:130px}
 .demo-camera .signature-copy{top:445px}
 }
+.demo-camera.play .film-frame img{animation-duration:2.2s;animation-delay:1.6s}
+.demo-camera.play .film-frame:nth-child(even) img{animation-delay:1.8s}
