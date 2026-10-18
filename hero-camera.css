@@ -1,0 +1,7 @@
+
+.demo-camera .cinema-hero{height:570px}
+.demo-camera .signature-copy{top:365px}
+.demo-camera .signature-copy p{font-size:28px;margin:0 0 15px;font-weight:400}
+.demo-camera .signature-copy h1{font-size:44px;line-height:1.2;font-weight:400}
+.demo-camera .sequence-label{display:none}
+@media(max-width:700px){.demo-camera .cinema-hero{height:470px}.demo-camera .camera{width:210px;top:30px}.demo-camera .film-window{top:80px;width:calc(50% - 62px)}.demo-camera .film-frame{width:105px}.demo-camera .film-frame img{height:150px}.demo-camera .signature-copy{top:295px}.demo-camera .signature-copy p{font-size:23px;margin-bottom:12px}.demo-camera .signature-copy h1{font-size:clamp(1.9rem,8vw,2.5rem);line-height:1.25}}
