@@ -25,7 +25,7 @@ if (form) {
     const button = form.querySelector('button[type=submit]');
     status.classList.remove('error');
     if (form.elements.website.value) return;
-    requestId ||= crypto.randomUUID();
+    requestId ||= globalThis.crypto?.randomUUID?.() || `lead-${Date.now()}-${Math.random().toString(36).slice(2)}`;
     const categories = { undecided: 'עדיין מתלבטת', home: 'בית', urban: 'עיר', portrait: 'פורטרט — חבילה בהתאמה אישית' };
     const payload = {
       'שם': form.elements.name.value.trim(),
@@ -55,6 +55,8 @@ if (form) {
       }
       status.textContent = 'תודה! הפנייה שלך נשלחה לחן. אחזור אלייך להמשך ההיכרות.';
       form.reset(); requestId = null;
+      const confirmation = document.querySelector('#contact-success');
+      if (confirmation) { form.hidden = true; confirmation.hidden = false; confirmation.focus(); confirmation.scrollIntoView({ block: 'center', behavior: 'auto' }); }
     } catch(error) {
       status.textContent = error.name === 'TimeoutError' ? 'לא התקבל אישור בזמן. ייתכן שהפנייה נשלחה; אפשר לפנות בוואטסאפ לבירור.' : (error.message?.startsWith('הטופס') || error.message?.startsWith('לא התקבל') ? error.message : 'לא ניתן להתחבר לשירות השליחה. הפרטים נשמרו בטופס; נסי שוב בעוד רגע.');
       status.classList.add('error');

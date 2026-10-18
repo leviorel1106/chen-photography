@@ -61,3 +61,7 @@ h2{font-size:clamp(2rem,3.5vw,3.25rem)}h3{font-size:1.8rem}
 .footer-bottom nav a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;text-decoration:underline;text-underline-offset:4px}
 .legal-tabs a[aria-current=page]{font-weight:600;text-decoration-thickness:2px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.lead-form[hidden],.contact-success[hidden]{display:none}
+.contact-success{padding:40px;background:var(--ivory);border:1px solid var(--line);align-self:start}
+.contact-success h3{font-size:30px;margin:20px 0}.contact-success p{font-size:18px;line-height:1.8}.contact-success .success-note{font-size:14px;margin-top:22px}.contact-success .text-link{margin-top:24px}.success-mark{display:grid;place-items:center;width:48px;height:48px;border:1px solid var(--gold);border-radius:50%;font-size:28px}.form-status.error{padding:14px;border:1px solid currentColor}
