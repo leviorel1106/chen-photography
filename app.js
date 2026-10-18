@@ -36,7 +36,7 @@ if (form) {
       'מזהה פנייה': requestId,
       _subject: 'פנייה חדשה מהאתר — חן פומיל',
       _template: 'table',
-      _url: 'https://leviorel1106.github.io/chen-photography/',
+      _url: location.origin + location.pathname,
       _honey: ''
     };
     submitting = true;
