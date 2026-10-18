@@ -56,3 +56,8 @@ h2{font-size:clamp(2rem,3.5vw,3.25rem)}h3{font-size:1.8rem}
 /* Display the supplied vertical photograph at its original aspect ratio. */
 .packages-photo{padding:0;overflow:hidden;align-self:center}
 .packages-photo img{display:block;position:static;width:100%;height:auto;min-height:0;max-height:none;aspect-ratio:1365/2048;object-fit:contain}
+
+.accessibility-link{position:fixed;right:18px;bottom:18px;z-index:30;display:flex;align-items:center;min-height:44px;padding:10px 16px;background:var(--canvas);color:var(--navy);border:1px solid var(--navy);border-radius:6px;font-size:14px;box-shadow:0 2px 8px #0002;text-decoration:underline;text-underline-offset:4px}
+.footer-bottom nav a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;text-decoration:underline;text-underline-offset:4px}
+.legal-tabs a[aria-current=page]{font-weight:600;text-decoration-thickness:2px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
