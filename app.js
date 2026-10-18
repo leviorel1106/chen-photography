@@ -15,39 +15,51 @@ privacy?.addEventListener('click', event => { if(event.target === privacy) { con
 
 const form = document.querySelector('#lead-form');
 const status = document.querySelector('#form-status');
-let leadReady = false;
+let submitting = false;
 let requestId = null;
-const startedAt = Date.now();
 if (form) {
-  if (config.staticPreview) {
-    status.textContent = 'הטופס עדיין לא מקבל פניות. בינתיים אפשר לפנות לחן בוואטסאפ.';
-  } else fetch('/api/status').then(response => response.json()).then(data => {
-    leadReady = data.leadsReady === true;
-    if (!leadReady) status.textContent = 'הטופס עדיין לא מקבל פניות. בינתיים אפשר לפנות לחן בוואטסאפ.';
-  }).catch(() => { status.textContent = 'הטופס אינו זמין כרגע. אפשר לפנות לחן בוואטסאפ.'; });
   form.addEventListener('input', () => { requestId = null; });
   form.addEventListener('submit', async event => {
     event.preventDefault();
-    if (!form.reportValidity()) return;
+    if (submitting || !form.reportValidity()) return;
     const button = form.querySelector('button[type=submit]');
     status.classList.remove('error');
-    if (!leadReady) { status.textContent = 'הטופס עדיין לא מחובר לקבלת פניות. הפרטים לא נשלחו. אפשר ליצור קשר באמצעות כפתור הוואטסאפ.'; status.classList.add('error'); return; }
+    if (form.elements.website.value) return;
     requestId ||= crypto.randomUUID();
-    const payload = Object.fromEntries(new FormData(form));
-    payload.consent = form.elements.consent.checked;
-    payload.startedAt = startedAt;
-    payload.requestId = requestId;
+    const categories = { undecided: 'עדיין מתלבטת', home: 'בית', urban: 'עיר', portrait: 'פורטרט — חבילה בהתאמה אישית' };
+    const payload = {
+      'שם': form.elements.name.value.trim(),
+      'טלפון': form.elements.phone.value.trim(),
+      'סוג סשן': categories[form.elements.category.value] || 'עדיין מתלבטת',
+      'הודעה': form.elements.message.value.trim() || 'לא נכתבה הודעה',
+      'הסכמה לשימוש בפרטים לצורך מענה': 'כן',
+      'מזהה פנייה': requestId,
+      _subject: 'פנייה חדשה מהאתר — חן פומיל',
+      _template: 'table',
+      _url: 'https://leviorel1106.github.io/chen-photography/',
+      _honey: ''
+    };
+    submitting = true;
     button.disabled = true;
+    form.setAttribute('aria-busy', 'true');
     status.textContent = 'שולחת את הפנייה…';
     try {
-      const response = await fetch('/api/leads', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), signal: AbortSignal.timeout(20000) });
+      const response = await fetch(config.leadEndpoint, {
+        method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload), signal: AbortSignal.timeout(20000)
+      });
       const data = await response.json();
-      if (!response.ok || !data.ok) throw new Error(data.message || 'לא ניתן לשלוח את הפנייה כרגע. נסי שוב או כתבי לי בוואטסאפ.');
-      status.textContent = 'תודה! הפנייה שלך התקבלה. אחזור אלייך להמשך ההיכרות.';
+      if (!response.ok || !(data.success === true || data.success === 'true')) {
+        if (/activat/i.test(data.message || '')) throw new Error('הטופס ממתין לאימות כתובת המייל של חן. הפנייה לא אושרה לשליחה. אפשר לפנות בינתיים בוואטסאפ.');
+        throw new Error('לא התקבל אישור שליחה. הפרטים נשמרו בטופס; אפשר לנסות שוב או לפנות בוואטסאפ.');
+      }
+      status.textContent = 'תודה! הפנייה שלך נשלחה לחן. אחזור אלייך להמשך ההיכרות.';
       form.reset(); requestId = null;
     } catch(error) {
-      status.textContent = error.name === 'TimeoutError' ? 'לא התקבל אישור שליחה. אפשר לנסות שוב או לפנות בוואטסאפ.' : error.message;
+      status.textContent = error.name === 'TimeoutError' ? 'לא התקבל אישור בזמן. ייתכן שהפנייה נשלחה; אפשר לפנות בוואטסאפ לבירור.' : (error.message?.startsWith('הטופס') || error.message?.startsWith('לא התקבל') ? error.message : 'לא ניתן להתחבר לשירות השליחה. הפרטים נשמרו בטופס; נסי שוב בעוד רגע.');
       status.classList.add('error');
-    } finally { button.disabled = false; }
+    } finally {
+      submitting = false; button.disabled = false; form.removeAttribute('aria-busy');
+    }
   });
 }

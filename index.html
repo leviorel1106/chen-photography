@@ -9,8 +9,8 @@
   <title>חן פומיל | צילום והפקת סיפורים</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/rubik-variable.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="styles.css?v=vertical-portrait"><link rel="stylesheet" href="art-direction.css">
-  <script src="site-config.js" defer></script>
-  <script src="app.js" defer></script>
+  <script src="site-config.js?v=email-form-1" defer></script>
+  <script src="app.js?v=email-form-1" defer></script>
 <link rel="stylesheet" href="cinema-preview.css?v=main-1"><link rel="stylesheet" href="hero-camera.css?v=four-photos-fast"><script src="hero-camera.js?v=main-1" defer></script></head>
 <body>
   <a class="skip-link" href="#main">דילוג לתוכן</a>
@@ -47,13 +47,13 @@
     <section class="packages-section" id="packages" aria-labelledby="packages-title"><div class="packages-photo"><img src="assets/packages-portrait.jpg" alt="רגע מתוך סשן צילום של חן" width="1365" height="2048" loading="lazy"></div><div class="packages-copy"><h2 id="packages-title">חבילות הפורטרט בנויות בשביל להביא את הסיפור שלך בדיוק כמו שחלמת</h2><ol class="process-list"><li><div><strong>נכיר ונדמיין</strong>פגישה על קפה או בזום כדי להכיר, לשמוע את הסיפור שלך ולגבש רעיון</div></li><li><div><strong>נגבש קונספט</strong>נבנה לוח השראה, נבחר לוקיישן, סטיילינג ואביזרים שמתאימים בדיוק</div></li><li><div><strong>נצטלם</strong>ביום הצילום, הסט הוא היצירה שלך, ולך יש מקום להיות היצירה שאת</div></li></ol><a class="button button-light" href="#contact">בואי נדמיין ביחד <span aria-hidden="true">←</span></a></div></section>
 
     <section class="contact-section section-wrap" id="contact" aria-labelledby="contact-title"><div class="contact-intro"><h2 id="contact-title">בואי נכיר</h2><p>ספרי לי קצת עליך ומה מתחשק לך ליצור<br>נמצא יחד את המסלול שמתאים לך בדיוק</p><a class="contact-instagram" data-instagram href="#contact">עוד מהעולם שלי באינסטגרם <span aria-hidden="true">↗</span></a></div>
-      <form id="lead-form" class="lead-form" action="/api/leads" method="post">
+      <form id="lead-form" class="lead-form" action="https://formsubmit.co/Chen@morethanart.co.il" method="post">
         <div class="form-row"><label><span>איך קוראים לך? <span aria-hidden="true">*</span></span><input name="name" autocomplete="name" required maxlength="100" placeholder="השם שלך"></label><label><span>מספר טלפון <span aria-hidden="true">*</span></span><input name="phone" type="tel" dir="ltr" autocomplete="tel" required maxlength="24" placeholder="050-0000000"></label></div>
         
         <label>איזה סשן מסקרן אותך?<select name="category"><option value="undecided">עדיין מתלבטת</option><option value="home">בית</option><option value="urban">עיר</option><option value="portrait">פורטרט - חבילה בהתאמה אישית</option></select></label>
         <label>קצת על מה שאת מדמיינת <span class="optional">(לא חובה)</span><textarea name="message" rows="3" maxlength="2000" placeholder="רעיון, השראה, או פשוט מה שמרגיש לך..."></textarea></label>
         <div class="honey" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
-        <p class="form-privacy">מסירת הפרטים היא לבחירתך. הם ישמשו את חן למענה לפנייה ולתיאום צילום. ללא פרטי קשר לא ניתן לחזור אלייך. אין הרשמה לדיוור. <a href="legal.html?section=privacy">למדיניות הפרטיות</a>.</p>
+        <p class="form-privacy">מסירת הפרטים היא לבחירתך. הם ישמשו את חן למענה לפנייה ולתיאום צילום. ללא פרטי קשר לא ניתן לחזור אלייך. אין הרשמה לדיוור. השליחה מתבצעת באמצעות FormSubmit. <a href="legal.html?section=privacy">למדיניות הפרטיות</a>.</p>
         <label class="consent"><input type="checkbox" name="consent" required><span>קראתי את מדיניות הפרטיות ואני מסכימה לשימוש בפרטים לצורך מענה לפנייה.</span></label>
         <button class="button button-dark" type="submit">שליחת פנייה לחן <span aria-hidden="true">←</span></button><a class="contact-whatsapp" data-whatsapp href="https://wa.me/972545282908">מעדיפה וואטסאפ? כתבי לי כאן ↗</a><p id="form-status" class="form-status" role="status" aria-live="polite"></p>
       </form>
