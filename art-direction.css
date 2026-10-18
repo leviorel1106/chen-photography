@@ -1,42 +1,12 @@
-/* Photographic art direction: gestures, movement and authored image pairs. */
-h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}
-.hero{position:relative;display:grid;grid-template-columns:40% 60%;direction:rtl;margin:0 22px;background:#1d3557;color:#fdf8e1;min-height:680px;overflow:hidden}
-.hero .hero-content{width:auto;padding:70px 12% 80px 5%;text-align:right;align-items:flex-start;justify-content:center;z-index:1}
-.hero .hero-kicker{font-size:20px;font-weight:400;margin-bottom:28px}
-.hero h1{font-size:clamp(2.8rem,5.4vw,5.8rem);font-weight:400;line-height:1.15;letter-spacing:-.025em}
-.hero-composition{direction:ltr;display:grid;grid-template-columns:1fr 1.65fr;grid-template-rows:1fr 1fr;gap:22px;padding:44px 28px 44px 44px;align-items:center}
-.hero-composition img{width:100%;height:auto;display:block;object-fit:contain}
-.hero-moment{grid-column:2;grid-row:1;align-self:end}
-.hero-movement{grid-column:1;grid-row:1/3}
-.hero-color{grid-column:2;grid-row:2;align-self:start;width:76%!important;margin-top:8px}
-.gallery-section{padding-top:110px;padding-bottom:110px}
-.gallery-section .section-intro{margin-bottom:68px}
-.gallery-choices{display:flex;flex-direction:column;gap:110px}
-.gallery-choice{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,.8fr);gap:9%;align-items:center}
-.gallery-choice:nth-child(2){direction:ltr;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-.gallery-choice:nth-child(2) .gallery-story{direction:rtl}
-.gallery-photo{background:transparent}
-.gallery-photo img{width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
-.gallery-title{display:block;margin:0 0 22px}
-.gallery-title h3{font-size:clamp(2.6rem,4.7vw,4.5rem);font-weight:400;margin-bottom:10px}
-.gallery-title span{font-size:11px;letter-spacing:.08em}
-.gallery-story p{max-width:31ch;font-size:17px;line-height:1.85}
-.gallery-story .text-link{margin:10px 0 32px;font-size:16px}
-.gallery-companion{display:block;width:70%;margin-inline-start:auto}
-.gallery-companion img{width:100%;height:auto;max-height:330px;object-fit:contain;object-position:right}
-.gallery-choice:nth-child(2) .gallery-photo{width:83%;margin-left:auto}
-.gallery-choice:nth-child(3) .gallery-photo{width:80%}
-.gallery-choice:nth-child(3) .gallery-companion{width:100%}
-.about-section{padding-block:95px;background:#ede6df}
-.about-copy h2{font-weight:400}
-.experience-section{padding-block:120px;gap:12%}
-.experience-main{aspect-ratio:auto;height:auto}
-.packages-section{background:#512e11}
-.packages-photo{padding:65px 12% 65px 4%;display:flex;align-items:center}
-.packages-photo img{min-height:0;max-height:none;height:auto;object-fit:contain}
-.packages-copy{padding-block:80px}
-.contact-section{padding-block:110px}
-.whatsapp-float{box-shadow:none}
-@media(min-width:1600px){.hero{max-width:1756px}}
-@media(max-width:1000px) and (min-width:701px){.hero{min-height:540px;grid-template-columns:42% 58%}.hero .hero-content{padding-inline:10% 0}.hero h1{font-size:3.6rem}.hero-composition{padding:30px 28px 30px 0;gap:14px}.gallery-choice{gap:6%}}
-@media(max-width:700px){.hero{display:flex;min-height:0;margin:0 10px}.hero .hero-content{padding:42px 25px 32px;text-align:right;align-items:flex-start}.hero .hero-kicker{font-size:16px;margin-bottom:18px}.hero h1{font-size:clamp(2.8rem,11vw,4rem);max-width:none}.hero-composition{padding:0 20px 26px;gap:14px;grid-template-columns:.7fr 1.3fr}.hero-color{width:90%!important;margin-top:0}.gallery-section{padding-top:60px}.gallery-section .section-intro{margin-bottom:38px}.gallery-choices{gap:68px}.gallery-choice,.gallery-choice:nth-child(2){display:flex;flex-direction:column;gap:25px;direction:rtl;align-items:stretch}.gallery-choice:nth-child(2) .gallery-photo,.gallery-choice:nth-child(3) .gallery-photo{width:100%}.gallery-title h3{font-size:2.8rem}.gallery-title{margin-bottom:15px}.gallery-story{display:grid;grid-template-columns:1.25fr .75fr;column-gap:22px;align-items:start}.gallery-title,.gallery-story p,.gallery-story .text-link{grid-column:1}.gallery-story p{font-size:15px}.gallery-companion,.gallery-choice:nth-child(3) .gallery-companion{grid-column:2;grid-row:1/4;width:100%;margin:0;align-self:center}.gallery-story .text-link{margin:10px 0 0;justify-self:start}.gallery-companion img{max-height:none}.about-section{padding-block:42px}.experience-section{padding-block:64px}.packages-photo{padding:32px 22px 0}.packages-copy{padding-block:38px}.contact-section{padding-block:64px}}
+/* Panoramic photographic signature, based on the client's visual references. */
+.hero{display:grid;grid-template-columns:1fr 1fr 2.2fr 1fr 1fr;direction:ltr;align-items:stretch;gap:10px;margin:22px 22px 0;padding:24px;min-height:0;height:clamp(320px,30vw,460px);max-height:none;background:#ede6df;color:#512e11;overflow:hidden}
+.hero-panel{min-width:0;min-height:0;overflow:hidden}
+.hero-panel img{display:block;width:100%;height:100%;object-fit:cover}
+.panel-one img{object-position:45% center}.panel-two img{object-position:50% center}.panel-three img{object-position:50% center}.panel-four img{object-position:50% center}
+.hero-signature{direction:rtl;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;padding:18px 12px;margin-inline:12px;border-block:1px solid #a67c45}
+.hero-brand{width:85px;height:auto;object-fit:contain;margin-bottom:16px;mix-blend-mode:multiply}
+.hero .hero-kicker{font-size:17px;line-height:1.5;margin:0 0 10px;font-weight:400}
+.hero h1{font-size:clamp(1.8rem,3vw,3.2rem);line-height:1.25;font-weight:400;letter-spacing:-.025em;margin:0;text-wrap:balance}
+@media(min-width:1600px){.hero{max-width:1756px;margin-inline:auto}}
+@media(max-width:1000px) and (min-width:701px){.hero{padding:16px;gap:7px;margin-inline:16px;grid-template-columns:1fr 1fr 2.5fr 1fr 1fr}.hero-signature{margin-inline:5px}.hero-brand{width:65px;margin-bottom:12px}.hero h1{font-size:2rem}}
+@media(max-width:700px){.hero{height:auto;margin:10px 10px 0;padding:18px;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:auto clamp(160px,45vw,240px);gap:7px}.hero-signature{grid-column:1/-1;grid-row:1;border:0;margin:0 0 20px;padding:8px 4px 18px;border-bottom:1px solid #a67c45}.hero-brand{width:72px;margin-bottom:14px}.hero .hero-kicker{font-size:16px;margin-bottom:8px}.hero h1{font-size:clamp(2rem,8vw,2.6rem);max-width:none}.hero h1 br{display:block}.hero-panel{grid-row:2}.panel-one{grid-column:1}.panel-two{grid-column:2}.panel-three{grid-column:3}.panel-four{grid-column:4}}

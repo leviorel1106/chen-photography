@@ -26,4 +26,4 @@ Logo: 1C241jKyXFmfjhaB1y61RYFndCJZg0_KH
 Verified WhatsApp number, Instagram URL, lead destination, legal entity/contact details, hosting and processing providers. Do not invent these values.
 
 ## October 18 art direction
-Navy opening with three original detail photographs, no single face-led hero. Gallery categories use larger photographic pairs in alternating proportions instead of equal cards. Preserve original photo aspect ratios and approved client copy. Responsive compact pair layout on mobile. Art-direction overrides live in art-direction.css.
+Panoramic hero inspired by supplied references: four original photographs flanking a centered brand signature, ivory ground, chocolate type and fine gold rules. Stack signature above photo strip on mobile. Gallery cards restored to their approved three-column layout. Approved client copy remains unchanged.
