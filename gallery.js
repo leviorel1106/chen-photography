@@ -1,7 +1,7 @@
 const categories = {
-  home: { title: 'בבית', description: 'הסביבה הטבעית שלך, המקום שבו את הכי את. תיעוד רך, אותנטי וקרוב.' },
-  urban: { title: 'בעיר', description: 'הקצב של יפו תל אביב, האור ברחובות והטקסטורות של העיר.' },
-  portrait: { title: 'פורטרט', description: 'המקום להעז, לחקור ויזואלית ולהביא את העולם הפנימי שלך לקדמת הבמה.' }
+  home: { title: 'בבית', description: 'סשן אינטימי באור הטבעי של הבית. תיעוד רך ונינוח במקום הכי טבעי שלך' },
+  urban: { title: 'בעיר', description: 'האור, הרחובות והטקסטורות של יפו תל אביב. יום כיף אורבני' },
+  portrait: { title: 'פורטרט', description: 'יצירה משותפת תיעודית-אמנותית. לבנות את הסשן סביב הסיפור הייחודי שלך.' }
 };
 const requested = new URLSearchParams(location.search).get('category');
 const category = Object.hasOwn(categories, requested) ? requested : 'home';

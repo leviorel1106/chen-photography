@@ -35,3 +35,16 @@ h2{font-size:clamp(2rem,3.5vw,3.25rem)}h3{font-size:1.8rem}
 @media(max-width:700px){:root{--header-height:82px}body{font-size:16px}.site-header{padding-inline:20px}.hero{margin-inline:10px;min-height:560px;height:calc(94svh - 82px);max-height:730px}.hero-content{align-items:center;text-align:center;padding:25px 22px 62px}.hero h1{font-size:clamp(2.5rem,10.5vw,3.4rem);line-height:1.15}.hero-kicker{font-size:12px;margin-bottom:14px}.hero-content>p:not(.hero-kicker){font-size:15px;max-width:27ch;margin:16px 0 23px}.hero-bottom{bottom:15px;font-size:11px}.hero-shade{background:linear-gradient(0deg,rgba(9,17,21,.78),rgba(9,17,21,.25) 42%,transparent 70%)}.section-wrap{padding:58px 22px}.section-intro{display:block;margin-bottom:28px}.section-intro h2{margin-bottom:13px}.section-intro>p{font-size:15px;max-width:32ch}.mobile-gallery-links{justify-content:flex-start;gap:28px;margin-top:18px;font-size:15px}.gallery-choices{gap:36px}.gallery-title{margin:16px 0 8px}.gallery-title h3{font-size:1.8rem}.gallery-choice p{font-size:15px;margin-bottom:8px}.gallery-photo img{aspect-ratio:4/5}.about-section{padding:32px 22px 42px;gap:30px}.about-copy{padding:0}.about-copy h2{font-size:2.1rem}.about-lead{font-size:1.35rem}.about-image img{aspect-ratio:3/2;min-height:0}.experience-section{gap:30px}.experience-copy h2{font-size:2.2rem}.experience-images{padding:0 30px 30px 0}.process-list{margin-top:20px}.packages-copy{padding:38px 22px 44px}.packages-copy h2{font-size:2.1rem}.packages-photo img{min-height:0;aspect-ratio:5/4}.contact-section{gap:28px}.contact-intro h2{font-size:2.35rem}.form-row{gap:20px}.contact-instagram{font-size:14px}.site-footer{padding-inline:22px}.page-header{padding:32px 22px}.page-header p{font-size:16px}.gallery-tabs{gap:12px}.gallery-tabs a{padding-inline:10px}.gallery-contact{font-size:14px}.footer-top{gap:18px}}
 
 .contact-whatsapp{align-self:flex-start;margin-top:0}.process-list li:before{direction:ltr}
+
+/* Client cover artwork is shown in full, with the headline on its own canvas. */
+.hero{display:flex;flex-direction:column;height:auto;min-height:0;max-height:none;background:var(--canvas);color:var(--navy);margin-inline:22px}
+.hero .hero-content{position:static;inset:auto;width:100%;padding:58px 24px 42px;align-items:center;justify-content:center;text-align:center;text-shadow:none}
+.hero .hero-kicker{font-size:18px;margin:0 0 16px}
+.hero h1{font-size:clamp(2.2rem,4.6vw,4.4rem);line-height:1.2}
+.hero-cover{display:block;width:100%;height:auto;aspect-ratio:4/1;object-fit:contain}
+.experience-images{padding:0}
+.experience-copy .session-options li{border-color:var(--line)}
+.packages-copy .process-list li{border-color:#fdf8e140}
+.packages-copy .process-list li:before{color:inherit}
+.packages-copy h2{font-size:clamp(1.8rem,2.6vw,2.6rem);line-height:1.35}
+@media(max-width:700px){.hero{margin-inline:0}.hero .hero-content{padding:40px 22px 30px}.hero .hero-kicker{font-size:16px;margin-bottom:12px}.hero h1{max-width:12ch}.experience-images{padding:0}}
